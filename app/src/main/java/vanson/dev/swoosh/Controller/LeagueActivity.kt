@@ -1,11 +1,12 @@
-package vanson.dev.swoosh
+package vanson.dev.swoosh.Controller
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_league.*
+import vanson.dev.swoosh.Utilities.EXTRA_LEAGUE
+import vanson.dev.swoosh.R
 
 class LeagueActivity : BaseActivity() {
     var selectLeague = ""

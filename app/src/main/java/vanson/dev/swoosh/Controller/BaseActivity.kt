@@ -1,9 +1,10 @@
-package vanson.dev.swoosh
+package vanson.dev.swoosh.Controller
 
 //import android.nfc.Tag
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import vanson.dev.swoosh.R
 
 open class BaseActivity : AppCompatActivity() {
     val TAG = "LifeCycle"
