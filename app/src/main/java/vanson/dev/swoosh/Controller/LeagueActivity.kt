@@ -5,19 +5,22 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_league.*
-import vanson.dev.swoosh.Utilities.EXTRA_LEAGUE
+import vanson.dev.swoosh.Model.Player
+//import vanson.dev.swoosh.Utilities.EXTRA_LEAGUE
 import vanson.dev.swoosh.R
+import vanson.dev.swoosh.Utilities.EXTRA_PLAYER
 
 class LeagueActivity : BaseActivity() {
-    var selectLeague = ""
+//    var selectLeague = ""
+    var player = Player("","")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
     }
     fun leagueNextClicked(view: View){
-        if(selectLeague != "") {
+        if(player.league != "") {
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE, selectLeague)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(skillActivity)
         }else{
             Toast.makeText(this, "Please select a league", Toast.LENGTH_SHORT).show()
@@ -27,9 +30,9 @@ class LeagueActivity : BaseActivity() {
         wonmensBtn.isChecked = false
         coBtn.isChecked = false
         if(mensBtn.isChecked){
-            selectLeague = "mens"
+            player.league = "mens"
         }else{
-            selectLeague = ""
+            player.league = ""
         }
     }
 
@@ -38,9 +41,9 @@ class LeagueActivity : BaseActivity() {
         coBtn.isChecked = false;
 //        selectLeague = "womens"
         if(wonmensBtn.isChecked){
-            selectLeague = "womens"
+            player.league = "womens"
         }else{
-            selectLeague = ""
+            player.league = ""
         }
     }
 
@@ -49,9 +52,9 @@ class LeagueActivity : BaseActivity() {
         wonmensBtn.isChecked = false;
 //        selectLeague = "co-ed"
         if(coBtn.isChecked){
-            selectLeague = "co-ed"
+            player.league = "co-ed"
         }else{
-            selectLeague = ""
+            player.league = ""
         }
     }
 }
